@@ -1,4 +1,4 @@
-package org.camunda.bpm.kundenprüfen
+package org.camunda.bpm.kundenpruefen
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import entity.Customer
@@ -31,12 +31,12 @@ object CustomerCheck {
                 val creditsum: Int = externalTask.getVariable("kreditsumme")
                 val duration: Int = externalTask.getVariable("laufzeit")
 
-                LOGGER.info("Charging credit card for the item '$prename'...")
-                LOGGER.info("Charging credit card for the item '$surname'...")
-                LOGGER.info("Charging credit card for the item '$email'...")
-                LOGGER.info("Charging credit card for the item '$income'...")
-                LOGGER.info("Charging credit card for the item '$creditsum'...")
-                LOGGER.info("Charging credit card for the item '$duration'...")
+                LOGGER.info("Der Vorname des Antragstellers ist: $prename")
+                LOGGER.info("Der Nachname des Antragstellers ist: $surname")
+                LOGGER.info("Die Email des Antragstellers ist: $email")
+                LOGGER.info("Das Einkommen des Antragstellers ist: $income")
+                LOGGER.info("Die gewünschte Kreditsumme ist: $creditsum")
+                LOGGER.info("Die gewünschte Laufzeit ist: $duration")
 
 
                 val customerForChecking = Customer(
@@ -48,14 +48,14 @@ object CustomerCheck {
                     duration = duration,
                 )
 
-                val Fclient = HttpClient.newHttpClient()
+                val fclient = HttpClient.newHttpClient()
 
                 val request = HttpRequest.newBuilder()
                     .uri(URI("http://localhost:3000/customers"))
                     .GET()
                     .build()
 
-                val response  = Fclient.send(request, BodyHandlers.ofString())
+                val response  = fclient.send(request, BodyHandlers.ofString())
 
                 println(response.body().toString())
 
@@ -66,7 +66,8 @@ object CustomerCheck {
 
                 customers.forEach { println(it.toString()) }
 
-                val result = customers.filter { it.equals(customerForChecking) }
+                // it == ... entspricht it.equals(...)
+                val result = customers.filter { it == customerForChecking }
 
                 if (result.isEmpty()) {
                     println("Mitarbeiter Melden")
