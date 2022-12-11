@@ -10,7 +10,6 @@ import java.net.http.HttpResponse.BodyHandlers
 import java.util.logging.Logger
 import com.fasterxml.jackson.module.kotlin.readValue
 
-
 object CustomerCheck {
     private val LOGGER = Logger.getLogger(CustomerCheck::class.java.name)
     @JvmStatic
@@ -37,7 +36,6 @@ object CustomerCheck {
                 LOGGER.info("Das Einkommen des Antragstellers ist: $income")
                 LOGGER.info("Die gewünschte Kreditsumme ist: $creditsum")
                 LOGGER.info("Die gewünschte Laufzeit ist: $duration")
-
 
                 val customerForChecking = Customer(
                     prename = prename,
