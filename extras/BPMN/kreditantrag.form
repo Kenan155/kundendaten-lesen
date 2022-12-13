@@ -1,0 +1,88 @@
+{
+  "components": [
+    {
+      "label": "Vorname",
+      "type": "textfield",
+      "id": "Field_0c9clrj",
+      "key": "prename",
+      "disabled": false,
+      "description": "z.B. Max",
+      "validate": {
+        "required": true,
+        "pattern": "[A-ZÄÖÜ][a-zäöüß]+(-[A-ZÄÖÜ][a-zäöüß]+)?"
+      },
+      "properties": {}
+    },
+    {
+      "label": "Nachname",
+      "type": "textfield",
+      "id": "Field_1d9x8iv",
+      "key": "surname",
+      "validate": {
+        "required": true,
+        "pattern": "[A-ZÄÖÜ][a-zäöüß]+(-[A-ZÄÖÜ][a-zäöüß]+)?"
+      },
+      "description": "z.B. Mustermann"
+    },
+    {
+      "label": "Emailadresse",
+      "type": "textfield",
+      "id": "Field_1leqdyr",
+      "key": "email",
+      "validate": {
+        "pattern": "[\\w.%-]+@[\\w.%-]+\\.[A-Za-z]{2,}",
+        "required": true
+      }
+    },
+    {
+      "label": "Einkommen",
+      "type": "number",
+      "id": "Field_1rtqgu6",
+      "key": "income",
+      "validate": {
+        "required": true,
+        "min": 0
+      },
+      "defaultValue": 0,
+      "description": "Das Jahresnettoeinkommen in €."
+    },
+    {
+      "label": "Kreditsumme",
+      "type": "number",
+      "id": "Field_0crt91y",
+      "key": "creditamount",
+      "description": "in €.",
+      "defaultValue": 0,
+      "validate": {
+        "required": true,
+        "min": 0
+      }
+    },
+    {
+      "label": "Laufzeit",
+      "type": "number",
+      "id": "Field_1vt25rx",
+      "key": "duration",
+      "description": "in ganzen Monaten.",
+      "defaultValue": 1,
+      "validate": {
+        "required": true,
+        "min": 1
+      }
+    },
+    {
+      "text": "Felder mit &ast; müssen ausgefüllt werden.",
+      "type": "text",
+      "id": "Field_0qwodzy"
+    }
+  ],
+  "type": "default",
+  "id": "kredit-antrag-form",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 5
+}
