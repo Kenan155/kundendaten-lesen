@@ -12,6 +12,7 @@ Anleitung POSTMAN einrichten:
 
 1.4. Body Tab Radiobutton form-data auswählen:
     KEY: upload
+        -> Rechts am Rand file auswählen, damit in Value Datei hochgeladen werden kann.
     VALUE: multipart/form-data
         -> Modler Datei des Prozesses auswählen (.bpmn)
 
