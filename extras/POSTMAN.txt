@@ -4,7 +4,7 @@ Anleitung POSTMAN einrichten:
 
 1.1. https://www.postman.com/ oder Postman.exe (https://www.postman.com/downloads/?utm_source=postman-home)
 
-1.2. Http Methode POST wählen mit URL : localhost:8080/engine-rest/process-definition/key/Kreditantrag/start
+1.2. Http Methode POST wählen mit URL : localhost:8080/engine-rest/deployment/create
 
 1.3. Headers Tab:
     KEY: content-type
