@@ -42,12 +42,12 @@ object CustomerCheck {
                 /**
                  * Speichern der Daten aus dem Prozess in Variablen
                  */
-                val prename: String = externalTask.getVariable("vorname")
-                val surname: String = externalTask.getVariable("nachname")
+                val prename: String = externalTask.getVariable("prename")
+                val surname: String = externalTask.getVariable("surname")
                 val email: String = externalTask.getVariable("email")
-                val income: Int = externalTask.getVariable("einkommen")
-                val creditsum: Int = externalTask.getVariable("kreditsumme")
-                val duration: Int = externalTask.getVariable("laufzeit")
+                val income: Int = externalTask.getVariable("income")
+                val creditsum: Int = externalTask.getVariable("creditsum")
+                val duration: Int = externalTask.getVariable("duration")
 
                 LOGGER.info("Der Vorname des Antragstellers ist: $prename")
                 LOGGER.info("Der Nachname des Antragstellers ist: $surname")
