@@ -46,14 +46,14 @@ object CustomerCheck {
                 val surname: String = externalTask.getVariable("surname")
                 val email: String = externalTask.getVariable("email")
                 val income: Int = externalTask.getVariable("income")
-                val creditsum: Int = externalTask.getVariable("creditsum")
+                val creditamount: Int = externalTask.getVariable("creditamount")
                 val duration: Int = externalTask.getVariable("duration")
 
                 LOGGER.info("Der Vorname des Antragstellers ist: $prename")
                 LOGGER.info("Der Nachname des Antragstellers ist: $surname")
                 LOGGER.info("Die Email des Antragstellers ist: $email")
                 LOGGER.info("Das Einkommen des Antragstellers ist: $income")
-                LOGGER.info("Die gewünschte Kreditsumme ist: $creditsum")
+                LOGGER.info("Die gewünschte Kreditsumme ist: $creditamount")
                 LOGGER.info("Die gewünschte Laufzeit ist: $duration")
 
                 /**
@@ -65,7 +65,7 @@ object CustomerCheck {
                     surname = surname,
                     email = email,
                     income = income,
-                    creditsum = creditsum,
+                    creditsum = creditamount,
                     duration = duration,
                 )
 
