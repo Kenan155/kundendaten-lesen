@@ -9,6 +9,8 @@ import java.net.http.HttpRequest
 import java.net.http.HttpResponse.BodyHandlers
 import java.util.logging.Logger
 import com.fasterxml.jackson.module.kotlin.readValue
+import org.apache.http.client.methods.HttpGet
+import org.apache.http.impl.client.DefaultHttpClient
 
 object CustomerCheck {
     private val LOGGER = Logger.getLogger(CustomerCheck::class.java.name)
@@ -72,20 +74,17 @@ object CustomerCheck {
                 /**
                  * Erzeugen des Http Clients um Requests an die Datenbank senden zu können.
                  */
-                val customerDbClient = HttpClient.newHttpClient()
+                val customerDbClient = DefaultHttpClient();
 
                 /**
                  * Bauen des Requests an die Datenbank.
                  */
-                val request = HttpRequest.newBuilder()
-                    .uri(URI(DB_URL))
-                    .GET()
-                    .build()
+                val request = HttpGet(DB_URL)
 
                 /**
                  * Abschicken des Requests an die Datenbank und abspeichern der Antwort.
                  */
-                val response  = customerDbClient.send(request, BodyHandlers.ofString())
+                val response  = customerDbClient.execute(request)
 
                 /**
                  * Bauen eines Mapper-Objekts um die JSON Daten aus der DB auf Objekte zu mappen.
@@ -95,7 +94,7 @@ object CustomerCheck {
                 /**
                  * JSON Daten aus dem Response Body extrahieren und eine Liste an Customer-Objekten erzeugen.
                  */
-                val json = response.body()
+                val json = response.entity.content
                 val customers = mapper.readValue<List<Customer>>(json)
 
 
