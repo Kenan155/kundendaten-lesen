@@ -13,7 +13,7 @@
       <bpmn:incoming>Flow_0q31my1</bpmn:incoming>
       <bpmn:outgoing>Flow_0n8gtaj</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="kreditantrag" name="Kunden einpflegen" camunda:formRef="kredit-antrag-form" camunda:formRefBinding="deployment" camunda:assignee="demo">
+    <bpmn:userTask id="kreditantrag" name="Create Customer Record" camunda:formRef="kredit-antrag-form" camunda:formRefBinding="deployment" camunda:assignee="demo">
       <bpmn:incoming>Flow_0iivmab</bpmn:incoming>
       <bpmn:incoming>Flow_022bdl2</bpmn:incoming>
       <bpmn:outgoing>Flow_0wxjwug</bpmn:outgoing>

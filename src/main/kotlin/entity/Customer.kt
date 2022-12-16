@@ -13,7 +13,7 @@ package entity
  * @property email Die E-Mail eines Customers, über die mit ihm kommuniziert wird.
  * @property creditRating Vergleichbar mit dem "Schufarating" eines Customers.
  * @property income Das Jahresnettoeinkommen in €.
- * @property creditsum Die Kreditsumme die sich ein Cutomer wünscht in €.
+ * @property creditamount Die Kreditsumme die sich ein Cutomer wünscht in €.
  * @property duration Die Wunschlaufzeit des Kredits in ganzen Monaten.
  * @property bankLoans Die Summe an bereits genehmigten Krediten.
  */
@@ -24,7 +24,7 @@ data class Customer(
     val email: String = "Nicht vorhanden",
     val creditRating: String = "Nicht vorhanden",
     val income: Int = 0,
-    val creditsum: Int = 0,
+    val creditamount: Int = 0,
     val duration: Int = 0,
     val bankLoans: Int = 0,
 ) {

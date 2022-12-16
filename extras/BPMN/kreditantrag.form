@@ -35,6 +35,20 @@
       }
     },
     {
+      "label": "Kreditrating",
+      "type": "textfield",
+      "id": "Field_0bw3wrr",
+      "key": "creditRating",
+      "validate": {
+        "required": true,
+        "pattern": "[A-C]",
+        "maxLength": 1,
+        "minLength": 1
+      },
+      "description": "Das Kreditrating ist A, B oder C.",
+      "properties": {}
+    },
+    {
       "label": "Einkommen",
       "type": "number",
       "id": "Field_1rtqgu6",

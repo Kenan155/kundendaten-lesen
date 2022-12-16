@@ -67,7 +67,7 @@ object CustomerCheck {
                     surname = surname,
                     email = email,
                     income = income,
-                    creditsum = creditamount,
+                    creditamount = creditamount,
                     duration = duration,
                 )
 
