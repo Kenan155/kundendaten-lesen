@@ -1,0 +1,29 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Approved",
+          "value": "true"
+        },
+        {
+          "label": "Not Approved",
+          "value": "false"
+        }
+      ],
+      "label": "Decide on Customer Creditworthiness:",
+      "type": "radio",
+      "id": "Field_1bfqkk9",
+      "key": "CustomerApprovement"
+    }
+  ],
+  "type": "default",
+  "id": "CustomerApprovement",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 5
+}
