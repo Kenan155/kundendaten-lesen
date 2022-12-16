@@ -61,13 +61,17 @@
       <bpmn:outgoing>Flow_0kkngwy</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_022bdl2" name="Customer not in Database" sourceRef="Gateway_14qph2r" targetRef="kreditantrag" />
-    <bpmn:sequenceFlow id="Flow_1jjl04z" name="Rating unequal to C" sourceRef="Gateway_1dkjy98" targetRef="Activity_10kdcwv" />
+    <bpmn:sequenceFlow id="Flow_1jjl04z" name="Rating unequal to C" sourceRef="Gateway_1dkjy98" targetRef="Activity_10kdcwv">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{creditRating!="C"}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:businessRuleTask id="Activity_10kdcwv" name="Decide on Loan Interest" camunda:resultVariable="approved" camunda:decisionRef="zinssatz" camunda:mapDecisionResult="singleEntry">
       <bpmn:incoming>Flow_1jjl04z</bpmn:incoming>
       <bpmn:incoming>Flow_0xe5j9n</bpmn:incoming>
       <bpmn:outgoing>Flow_1y6elp0</bpmn:outgoing>
     </bpmn:businessRuleTask>
-    <bpmn:sequenceFlow id="Flow_0kkngwy" name="Rating equal to C" sourceRef="Gateway_1dkjy98" targetRef="Customerapprovement" />
+    <bpmn:sequenceFlow id="Flow_0kkngwy" name="Rating equal to C" sourceRef="Gateway_1dkjy98" targetRef="Customerapprovement">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{creditRating="C"}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:userTask id="Customerapprovement" name="Decide if creditworthy" camunda:formRef="CustomerApprovement" camunda:formRefBinding="deployment" camunda:assignee="demo">
       <bpmn:incoming>Flow_0kkngwy</bpmn:incoming>
       <bpmn:outgoing>Flow_1d2yho7</bpmn:outgoing>
